@@ -24,3 +24,5 @@ freetube_updater-*.tar
 
 # Temporary files for e.g. tests
 /tmp
+
+config/config.json
