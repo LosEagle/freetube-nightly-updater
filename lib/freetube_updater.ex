@@ -1,6 +1,14 @@
 defmodule FreeTubeUpdater do
+  @env Mix.env()
+
+  def env, do: @env
+
   def get_download_link() do
-    config_path = File.cwd!() <> "/config/config.json"
+    config_path = case FreeTubeUpdater.env() do
+      :dev -> File.cwd!() <> "/config/config.json"
+      :prod -> File.cwd!() <> "/rel/freetube_updater/config/config.json"
+    end
+
     config = FreeTubeUpdater.Config.parse!(config_path)
 
     nightly_artifact_url = "https://api.github.com/repos/freetubeapp/freetube/actions/artifacts"
