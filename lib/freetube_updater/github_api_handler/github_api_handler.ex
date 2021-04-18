@@ -4,7 +4,7 @@ defmodule FreeTubeUpdater.GithubApiHandler do
   end
 
   def send_authenticated_request(url, token) do
-    headers = ["Authorization": "Bearer #{token}", "Accept": "Application/json; Charset=utf-8"]
+    headers = [Authorization: "Bearer #{token}", Accept: "Application/json; Charset=utf-8"]
 
     HTTPoison.get!(url, headers)
   end
