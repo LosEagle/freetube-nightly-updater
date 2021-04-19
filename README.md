@@ -1,6 +1,6 @@
 # FreeTube nightly updater
    
-An app that makes updating FreeTube from nightly build artifacts more automated.
+An app that makes updating FreeTube from nightly build artifacts more automated by giving you a direct download link to the newest artifact.
    
 There is a simple one-time setup for using this app: 
 - copy `config.sample.json` to `config.json` in `/rel/freetube_updater/config`
