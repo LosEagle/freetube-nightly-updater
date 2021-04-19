@@ -7,7 +7,7 @@ defmodule FreeTubeUpdater.Application do
 
   @impl true
   def start(_type, _args) do
-    IO.inspect(FreeTubeUpdater.get_download_link())
+    IO.inspect(FreeTubeUpdater.get_download_link!())
 
     children = [
       # Starts a worker by calling: FreeTubeUpdater.Worker.start_link(arg)

@@ -1,5 +1,5 @@
 defmodule FreeTubeUpdater do
-  def get_download_link() do
+  def get_download_link!() do
     nightly_artifact_url = "https://api.github.com/repos/freetubeapp/freetube/actions/artifacts"
 
     config =
@@ -23,6 +23,6 @@ defmodule FreeTubeUpdater do
         |> Tuple.to_list()
         |> Enum.at(1)
 
-    {":ok", download_link}
+    download_link
   end
 end
