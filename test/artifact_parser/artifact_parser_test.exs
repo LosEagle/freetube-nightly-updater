@@ -5,7 +5,7 @@ defmodule ArtifactParserTest do
   test "finds matching artifact for windows-setup configuration" do
     artifacts =
       File.read!(File.cwd!() <> "/test/artifact_parser/mock_artifacts.json")
-        |> Poison.decode!()
+      |> Poison.decode!()
 
     matched_artifact = FreeTubeUpdater.ArtifactParser.get_artifact(artifacts, "Win", "Setup")
 
@@ -15,7 +15,7 @@ defmodule ArtifactParserTest do
   test "fails when given incorrect configuration" do
     artifacts =
       File.read!(File.cwd!() <> "/test/artifact_parser/mock_artifacts.json")
-        |> Poison.decode!()
+      |> Poison.decode!()
 
     assert_raise(
       FunctionClauseError,

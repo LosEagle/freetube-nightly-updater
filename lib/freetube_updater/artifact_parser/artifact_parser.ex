@@ -16,14 +16,17 @@ defmodule FreeTubeUpdater.ArtifactParser do
 
     Enum.find(
       artifacts,
-      &String.match?(&1["name"], get_in(patterns, [
-        os
+      &String.match?(
+        &1["name"],
+        get_in(patterns, [
+          os
           |> String.downcase()
           |> String.to_atom(),
-        format
-          |> String.downcase
+          format
+          |> String.downcase()
           |> String.to_atom()
-      ]))
+        ])
+      )
     )
   end
 end
