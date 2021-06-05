@@ -3,7 +3,7 @@
 An app that makes updating FreeTube from nightly build artifacts more automated by giving you a direct download link to the newest artifact.
    
 There is a simple one-time setup for using this app: 
-- copy `config.sample.json` to `config.json` in `/rel/freetube_updater/config`
+- open `/rel/freetube_updater/config.json`
 - fill in the three values in file
    - **token** is your GitHub personal access token. You can easily generate one in https://github.com/settings/tokens
       - I know this is inconvenient, but it takes just a minute or two and it's necessary, because
