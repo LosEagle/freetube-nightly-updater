@@ -24,7 +24,7 @@ defmodule FreeTubeUpdater.DownloadLink do
 
   def pass_to_command(download_link, config) do
     if(config["command"] !== nil and config["command"] !== "") do
-      System.cmd(config["command"], [download_link])
+      System.cmd(config["command"], [download_link], into: IO.stream(:stdio, :line))
     end
 
     {:ok, download_link}
