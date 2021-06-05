@@ -7,16 +7,8 @@ defmodule FreeTubeUpdater.Application do
 
   @impl true
   def start(_type, _args) do
-    FreeTubeUpdater.init()
+    {status, pid} = FreeTubeUpdater.init()
 
-    children = [
-      # Starts a worker by calling: FreeTubeUpdater.Worker.start_link(arg)
-      # {FreeTubeUpdater.Worker, arg}
-    ]
-
-    # See https://hexdocs.pm/elixir/Supervisor.html
-    # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: FreeTubeUpdater.Supervisor]
-    Supervisor.start_link(children, opts)
+    System.stop(0)
   end
 end
